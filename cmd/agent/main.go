@@ -70,7 +70,7 @@ func (mp *MainProcessor) ProcessWindow(w *window.Window) error {
 }
 
 func main() {
-	cfg, err := config.LoadConfig("/Users/onur.baran/Projects/stream-rag-agent/configs/configs.yml")
+	cfg, err := config.LoadConfig("../configs/configs.yml")
 	if err != nil {
 		log.Fatalf("Failed to load config: %v", err)
 	}
