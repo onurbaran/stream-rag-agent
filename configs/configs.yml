@@ -1,0 +1,23 @@
+kafka:
+  brokers:
+    - localhost:9092
+  consumer_group_id: rag_agent_group
+  topics:
+    - name: financial_transactions
+      context: "This topic contains real-time financial transaction data, including purchases, transfers, and refunds."
+      window_duration_seconds: 60 # 60 sec window duration
+      window_max_messages: 10    # or 100 buffered message
+    - name: sensor_data
+      context: "This topic streams sensor readings from industrial machinery, including temperature, pressure, and vibration."
+      window_duration_seconds: 300
+      window_max_messages: 500
+
+ollama:
+  url: http://localhost:11434
+  embedding_model: nomic-embed-text
+  llm_model: llama3
+
+elasticsearch:
+  addresses:
+    - http://localhost:9200
+  index_name: rag_embeddings
